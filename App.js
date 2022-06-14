@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // Our project has two screens: HomeScreen and GameScreen
 // Thus, we import both of these screens
 import HomeScreen from "./screens/HomeScreen";
-import GameScreen from "./screens/GameScreen";
+import GameScreen from "./screens/GameScreen";123
 import { nameToPic } from "./constants/Constants";
 import { Asset } from "expo-asset";
 

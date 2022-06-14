@@ -8,8 +8,11 @@ import { shuffle } from "../utils/ArrayUtils";
 const names = Object.keys(nameToPic);
 
 export default function GameScreen() {
-  // TODO: Declare and initialize state variables here, using "useState".
-
+  // TODO: Declare and initialize state variables here, using "useState". 
+  // 1. Score 
+  const [correct, setCorrectScore] = useState(0);
+  // 2. Total
+  const [total, setTotalQuestions] = useState(0);
   // State for the timer is handled for you.
   const [timeLeft, setTimeLeft] = useState(5000);
 
@@ -17,10 +20,11 @@ export default function GameScreen() {
   const countDown = () => {
     if (timeLeft > 0) {
       // Time still left, so decrement time state variable
-      setTimeLeft(timeLeft - 10);
+      setTimeLeft(timeLeft - 5);
     } else {
       // Time has expired
       // TODO: update appropriate state variables
+      setTotalQuestions(total + 1);
     }
   };
 
