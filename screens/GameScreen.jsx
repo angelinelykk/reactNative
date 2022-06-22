@@ -126,7 +126,7 @@ export default function GameScreen() {
     <View style={styles.container}>
       <Text
         style={styles.timerText}
-        >{timeLeft}
+        >Time Left: {timeLeft}
       </Text>
       <View style = {styles.imageView1}>
         <Image
@@ -162,11 +162,7 @@ export default function GameScreen() {
       </TouchableOpacity>
       <Text 
         style={styles.scoreText}
-        >{total}
-      </Text>
-      <Text 
-        style={styles.scoreText}
-        >{correctScore}
+        >Current Score: {correctScore}/{total}
       </Text>
     </View>
   );
