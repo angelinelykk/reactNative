@@ -14,7 +14,7 @@ export default function GameScreen() {
   // 2. Total
   const [total, setTotalQuestions] = useState(0);
   // State for the timer is handled for you.
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(5);
   const [selectedName, setSelectedName] = useState("")
 
   const [gcorrect, setCorrectMember] = useState(names[Math.floor(Math.random() * names.length)])
@@ -39,7 +39,7 @@ export default function GameScreen() {
     } else {
       // Time has expired
       // TODO: update appropriate state variables
-      setTimeLeft(10);
+      setTimeLeft(5);
       setTotalQuestions(total + 1);
     }
   };
@@ -72,7 +72,7 @@ export default function GameScreen() {
     setCorrectMember(correct);
     setNameOptions(nameOptions);
 
-    setTimeLeft(10);
+    setTimeLeft(5);
   };
 
   // Called when user taps a name option.
@@ -116,7 +116,6 @@ export default function GameScreen() {
     );
   }
 
-  const timeRemainingStr = (timeLeft / 1000).toFixed(2);
 
   const pressedName = (name) => {
     setSelectedName(name);
