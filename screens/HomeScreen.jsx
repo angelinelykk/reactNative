@@ -24,7 +24,7 @@ export default function HomeScreen(props) {
         style={styles.button}
         onPress={() => navigation.navigate("Play")}
       >
-        <Text style={styles.buttonText}>Play</Text>
+        <Text style={styles.buttonText}>Start</Text>
       </TouchableOpacity>
     </View>
   );

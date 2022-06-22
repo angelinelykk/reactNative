@@ -10,20 +10,25 @@ const names = Object.keys(nameToPic);
 export default function GameScreen() {
   // TODO: Declare and initialize state variables here, using "useState". 
   // 1. Score 
-  const [correct, setCorrectScore] = useState(0);
+  const [correctScore, setCorrectScore] = useState(0);
   // 2. Total
   const [total, setTotalQuestions] = useState(0);
   // State for the timer is handled for you.
-  const [timeLeft, setTimeLeft] = useState(5000);
+  const [timeLeft, setTimeLeft] = useState(10);
+
+  const [gcorrect, setCorrectMember] = useState(names[Math.floor(Math.random() * names.length)])
+  const [gcorrectName, setCorrectName] = useState(nameToPic[gcorrect][0])
+  const [gcorrectImage, setCorrectImage] = useState(nameToPic[gcorrect][1])
 
   // Called by the timer every 10 seconds
   const countDown = () => {
     if (timeLeft > 0) {
       // Time still left, so decrement time state variable
-      setTimeLeft(timeLeft - 5);
+      setTimeLeft(timeLeft - 1);
     } else {
       // Time has expired
       // TODO: update appropriate state variables
+      setTimeLeft(10);
       setTotalQuestions(total + 1);
     }
   };
@@ -47,9 +52,11 @@ export default function GameScreen() {
     }
     nameOptions = shuffle(nameOptions);
 
-    // TODO: Update state here.
+    setCorrectImage(correctImage);
+    setCorrectName(correctName);
+    setCorrectMember(correct);
 
-    setTimeLeft(5000);
+    setTimeLeft(10);
   };
 
   // Called when user taps a name option.
@@ -58,7 +65,7 @@ export default function GameScreen() {
 
   // Call the countDown() method every 10 milliseconds.
   useEffect(() => {
-    const timer = setInterval(() => countDown(), 10);
+    const timer = setInterval(() => countDown(), 1000);
     return function cleanup() {
       clearInterval(timer);
     };
@@ -71,7 +78,7 @@ export default function GameScreen() {
       getNextRound();
     },
     [
-      /* TODO: Your State Variable Goes Here */
+      total
     ]
   );
 
@@ -102,6 +109,14 @@ export default function GameScreen() {
       {/* Hint: What does the nameButtons list above hold? 
           What types of objects is this list storing?
           Try to get a sense of what's going on in the for loop above. */}
+      <Text>{timeLeft}</Text>
+      <Text>{gcorrectName}</Text>
+      <View style={styles.imageView}>
+        <Image
+          source={gcorrectImage}
+          style={{width: 100, height: 100}}
+        />
+      </View>
     </View>
   );
 }
