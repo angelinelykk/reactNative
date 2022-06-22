@@ -104,19 +104,21 @@ export default function GameScreen() {
 
   // Style & return the view.
   return (
-    <View>
-      {/* TODO: Build out your UI using Text and Image components. */}
-      {/* Hint: What does the nameButtons list above hold? 
-          What types of objects is this list storing?
-          Try to get a sense of what's going on in the for loop above. */}
-      <Text>{timeLeft}</Text>
-      <Text>{gcorrectName}</Text>
-      <View style={styles.imageView}>
+    <View style={styles.container}>
+      <Text
+        style={styles.timerText}
+        >{timeLeft}
+      </Text>
+      <View style = {styles.imageView1}>
         <Image
-          source={gcorrectImage}
-          style={{width: 100, height: 100}}
+            source={gcorrectImage}
+            style={styles.imageMember}
         />
       </View>
+      <Text 
+        style={styles.scoreText}
+        >{gcorrectName}
+      </Text>
     </View>
   );
 }

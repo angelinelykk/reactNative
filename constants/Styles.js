@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "center",
     paddingHorizontal: 10,
+    alignItems: "center",
   },
   button: {
     alignItems: "center",
@@ -15,6 +16,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#3498db",
   },
   imageView: { height: "20%", width: "100%" },
+  imageView1: {
+    height: "50%", 
+    width: "100%",
+    alignItems: "center",
+    resizeMode: "contain",
+  },
   imageLogo: {
     flex: 1,
     width: null,
@@ -22,12 +29,10 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     resizeMode: "contain",
   },
-  image: {
-    justifyContent: "center",
-    margin: 10,
-    height: "30%",
+  imageMember: {
+    height: "100%",
     width: "100%",
-    resizeMode: "contain",
+    resizeMode: "cover",
   },
   buttonText: {
     fontFamily: "Avenir",
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#e74c3c",
     textAlign: "center",
-    marginBottom: 30,
+    marginBottom: 0,
   },
   scoreText: {
     fontFamily: "Avenir",
@@ -49,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#3498db",
     textAlign: "center",
-    marginBottom: 10,
+    marginBottom: 0,
   },
 });
 
